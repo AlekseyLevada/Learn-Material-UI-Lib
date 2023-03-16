@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography, IconButton, Icon } from "@mui/material"
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
-export const MainPage = (): JSX.Element => {
+export const MainPage = () => {
     return(
         <AppBar position="fixed">
             <Toolbar>

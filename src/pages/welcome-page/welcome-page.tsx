@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 
 
 
-export const WelcomePage: React.FC = () => {
+export const WelcomePage = () => {
     return (
         <div className="welcome-page">
             <Typography

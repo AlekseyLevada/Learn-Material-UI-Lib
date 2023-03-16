@@ -1,7 +1,7 @@
 import { Container, Typography, TextField, InputAdornment, Button } from "@mui/material"
 import { Link } from 'react-router-dom'
 
-export const SignUp: React.FC = () => {
+export const SignUp = () => {
     return (
         <Container
             sx={{

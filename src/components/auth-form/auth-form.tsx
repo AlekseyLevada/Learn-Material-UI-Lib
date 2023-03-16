@@ -1,37 +1,20 @@
 import { useState } from 'react'
 import { Container, Typography, TextField, Button } from "@mui/material"
-import { useNavigate } from 'react-router-dom'
-import { height } from '@mui/system'
 
-interface IisAuth {
-    isAuth: boolean
-    setIsAuth: void
-}
 
-export const Authentication: React.FC = () => {
+export const Authentication = () => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const navigate = useNavigate()
-
 
     const dataBaseRequest = async (e: any) => {
-        if (password === confirmPassword) {
-            let recivedData = null
-
+        let recivedData = null
         await fetch('http://localhost:5173/src/plugs/users.json')
             .then(res => res.json())
             .then(data => recivedData = data)
             console.log(recivedData)
-            
-            navigate('/main');
-        }  
-        else {
-            alert('Пароли не совпадают')
-        }
-
     }
 
     return (
@@ -93,7 +76,7 @@ export const Authentication: React.FC = () => {
                     cursor: 'pointer',
                 }}
             >
-                Don't have an account? <Typography
+                Don't have an account? <Typography 
                     sx={{
                         display: 'inline',
                         color: '#1665C0',
