@@ -1,5 +1,4 @@
-import { Container, Typography, TextField, InputAdornment, Button } from "@mui/material"
-import { Link } from 'react-router-dom'
+import { Container, Typography, TextField, Button } from "@mui/material"
 
 export const SignUp = () => {
     return (
@@ -82,7 +81,7 @@ export const SignUp = () => {
                     fullWidth={true}
                     variant="contained"
                     sx={{
-                        mb:'30px',
+                        mb:'20px',
                     }}
                 >
                     Sign Up

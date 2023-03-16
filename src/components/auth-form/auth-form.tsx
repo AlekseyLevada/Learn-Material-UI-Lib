@@ -7,8 +7,6 @@ export const Authentication = () => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
-
 
     const dataBaseRequest = async (e: any) => {
         let recivedData = null
