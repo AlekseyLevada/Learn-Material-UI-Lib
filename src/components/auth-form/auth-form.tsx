@@ -1,16 +1,9 @@
 import { useState } from 'react'
 import { Container, Typography, TextField, Button } from "@mui/material"
-import type { IisAuth } from '../../common/isAuth'
+import { Link } from 'react-router-dom'
 
 
-export const Authentication = (props: IisAuth) => {
-
-    const {isAuth, setIsAuth} = props
-
-    // let setIsAuthState = () => {
-    //     setIsAuth(true)
-    // }
-
+export const Authentication = () => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
@@ -19,10 +12,10 @@ export const Authentication = (props: IisAuth) => {
 
     const dataBaseRequest = async (e: any) => {
         let recivedData = null
+
         await fetch('http://localhost:5173/src/plugs/users.json')
-            .then(res => res.json())
-            .then(data => recivedData = data)
-            console.log(recivedData)
+        .then(res => res.json())
+        .then(data => recivedData = data)
     }
 
     return (
@@ -33,7 +26,8 @@ export const Authentication = (props: IisAuth) => {
                 flexDirection: 'column',
                 borderRadius: '5px',
                 boxShadow: '2px 2px 10px #afafaf',
-                minHeight:'280px',
+                minHeight:'300px',
+                padding:'10px',
             }}
             maxWidth='xs'
         >
@@ -41,10 +35,17 @@ export const Authentication = (props: IisAuth) => {
             <Typography
                 textAlign='center'
                 variant="h4"
-                fontWeight='400'
-                mb={4}
+                fontWeight='600'
+                mb={2}
             >
                 Log In
+            </Typography>
+            <Typography
+                variant="subtitle1"
+                textAlign='center'
+                mb={2}
+            >
+                Enter your login and password
             </Typography>
                 <TextField onChange={(e) => setLogin(e.target.value)}
                     fullWidth
@@ -83,16 +84,20 @@ export const Authentication = (props: IisAuth) => {
                     mt: '20px',
                 }}
             >
-                Don't have an account? <Typography onClick={() => setIsAuth(false)}
+                Don't have an account?
+                <Link to='/register'>
+                    <Typography
                     sx={{
                         display: 'inline',
                         color: '#1665C0',
                         fontWeight: '700',
                         cursor:'pointer',
+                        ml:'5px',
                     }}
-                >
-                    Register!
-                </Typography>
+                    >
+                        Register!
+                    </Typography>
+                </Link>
             </Typography>
             </form>
         </Container>

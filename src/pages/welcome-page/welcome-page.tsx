@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import Button from '@mui/material/Button';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 
 
 
