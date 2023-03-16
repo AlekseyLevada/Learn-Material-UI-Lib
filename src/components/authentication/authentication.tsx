@@ -71,17 +71,6 @@ export const Authentication: React.FC = () => {
                         mb: '20px'
                     }}>
                 </TextField>
-                <TextField onChange={(e)=> setConfirmPassword(e.target.value)}
-                    fullWidth
-                    required
-                    size="small"
-                    type='password'
-                    variant='outlined'
-                    label='Confirm password'
-                    sx={{
-                        mb: '20px'
-                    }}>
-                </TextField>
                 <Button
                     onClick={(e) => dataBaseRequest(e)}
                     fullWidth={true}

@@ -9,7 +9,7 @@ export const SignUp: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 borderRadius: '5px',
-                minHeight:'362px',
+                minHeight:'320px',
                 boxShadow:'2px 2px 10px #afafaf',
                 padding:'20px',
             }}
@@ -39,16 +39,6 @@ export const SignUp: React.FC = () => {
                 type='password'
                 variant='outlined'
                 label='Password'
-                sx={{
-                    mb: '20px'
-                }}>
-            </TextField>
-            <TextField
-                required
-                size="small"
-                type='password'
-                variant='outlined'
-                label='Confirm password'
                 sx={{
                     mb: '20px'
                 }}>

@@ -4,7 +4,7 @@ import { Authentication } from "../../components/authentication/authentication"
 import { SignUp } from "../../components/sign-up/sign-up-form"
 
 
-export const SignUpPage: React.FC = () => {
+export const LoginPage: React.FC = () => {
 
     const [isAuth, setIsAuth] = useState(true)
 

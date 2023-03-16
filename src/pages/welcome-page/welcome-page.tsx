@@ -20,7 +20,7 @@ export const WelcomePage: React.FC = () => {
             >
                 Material UI World
             </Typography>
-            <Link to='/auth'>
+            <Link to='/login'>
                 <Button
                     variant='contained'
                     sx={{
