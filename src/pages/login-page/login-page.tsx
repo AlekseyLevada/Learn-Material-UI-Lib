@@ -1,7 +1,6 @@
 import { useState} from 'react'
 import { Box } from "@mui/material"
 import { Authentication } from "../../components/auth-form/auth-form"
-import { SignUp } from "../../components/signup-form/sign-up-form"
 
 
 export const LoginPage = () => {
@@ -21,7 +20,7 @@ export const LoginPage = () => {
         }}
         >
             {
-                isAuth? <Authentication data={some}/> : <SignUp/>
+                isAuth? <Authentication isAuth={isAuth} setIsAuth={setIsAuth}/> : null
             }
         </Box>
         

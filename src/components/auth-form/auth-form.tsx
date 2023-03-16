@@ -1,8 +1,16 @@
 import { useState } from 'react'
 import { Container, Typography, TextField, Button } from "@mui/material"
+import type { IisAuth } from '../../common/isAuth'
 
 
-export const Authentication = () => {
+export const Authentication = (props: IisAuth) => {
+
+    const {isAuth, setIsAuth} = props
+
+    // let setIsAuthState = () => {
+    //     setIsAuth(true)
+    // }
+
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
@@ -73,14 +81,14 @@ export const Authentication = () => {
                 sx={{
                     mb: '20px',
                     mt: '20px',
-                    cursor: 'pointer',
                 }}
             >
-                Don't have an account? <Typography 
+                Don't have an account? <Typography onClick={() => setIsAuth(false)}
                     sx={{
                         display: 'inline',
                         color: '#1665C0',
                         fontWeight: '700',
+                        cursor:'pointer',
                     }}
                 >
                     Register!

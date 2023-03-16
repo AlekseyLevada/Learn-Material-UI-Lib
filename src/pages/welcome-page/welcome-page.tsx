@@ -1,13 +1,25 @@
-import './styles/style.css'
 import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 
 
 export const WelcomePage = () => {
     return (
-        <div className="welcome-page">
+        <Box
+        sx={{
+            background:'url("https://wallpaperaccess.com/full/1355318.jpg")',
+            minHeight:'100vh',
+            backgroundPosition:'center',
+            backgroundRepeat:'no-repeat',
+            backgroundSize:'cover',
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center',
+            flexDirection:'column',
+            filter:'saturate(120%)',
+        }}
+        >
             <Typography
                 color='white'
                 variant='h1'
@@ -30,6 +42,6 @@ export const WelcomePage = () => {
                     Войти в приложение
                 </Button>
             </Link>
-        </div>
+        </Box>
     )
 }

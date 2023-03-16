@@ -42,14 +42,12 @@ export const SignUp = () => {
                     mb: '20px'
                 }}>
             </TextField>
-            <Link to='/main'>
                 <Button
                     fullWidth={true}
                     variant="contained"
                 >
                     Sign Up
                 </Button>
-            </Link>
         </Container>
     )
 }
