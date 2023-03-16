@@ -1,7 +1,12 @@
 import { useState } from 'react'
 import { Container, Typography, TextField, Button } from "@mui/material"
 import { useNavigate } from 'react-router-dom'
+import { height } from '@mui/system'
 
+interface IisAuth {
+    isAuth: boolean
+    setIsAuth: void
+}
 
 export const Authentication: React.FC = () => {
 
@@ -10,6 +15,7 @@ export const Authentication: React.FC = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
 
     const navigate = useNavigate()
+
 
     const dataBaseRequest = async (e: any) => {
         if (password === confirmPassword) {
@@ -36,7 +42,7 @@ export const Authentication: React.FC = () => {
                 flexDirection: 'column',
                 borderRadius: '5px',
                 boxShadow: '2px 2px 10px #afafaf',
-                padding: '20px',
+                minHeight:'280px',
             }}
             maxWidth='xs'
         >

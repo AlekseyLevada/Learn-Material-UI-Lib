@@ -5,7 +5,7 @@ import { Box } from '@mui/material/'
 
 export const PrivatePage: React.FC = () => {
 
-    const [isAuth, setIsAuth] = useState(true)
+    const [isAuth, setIsAuth] = useState(false)
 
     return(
         <Box>

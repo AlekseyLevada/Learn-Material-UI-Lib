@@ -9,9 +9,8 @@ export const SignUp: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 borderRadius: '5px',
-                minHeight:'320px',
+                minHeight:'280px',
                 boxShadow:'2px 2px 10px #afafaf',
-                padding:'20px',
             }}
             maxWidth='xs'
         >
