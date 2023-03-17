@@ -4,4 +4,5 @@ export interface ISignUpForm {
     setPassword: (value: string) => void
     setConfirmPassword: (value: string) => void
     setEmail: (value: string) => void
+    submitFormData: (e: { preventDefault: () => void }, formType: string) => void
 }

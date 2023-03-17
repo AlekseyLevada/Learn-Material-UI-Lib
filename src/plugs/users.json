@@ -8,5 +8,15 @@
         "login": "user",
         "password": "user",
         "isAdmin": false
+    },
+    {
+        "login": "maybe1988",
+        "password": "12345",
+        "isAdmin": false
+    },
+    {
+        "login": "anastasiya1987",
+        "password": "123456",
+        "isAdmin": false
     }
 ]
