@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Box } from "@mui/material"
 import { LoginForm } from "../../components/login-form/login-form"
 import { SignUpForm } from '../../components/signup-form/sign-up-form'
+import axios from 'axios'
 
 
 export const AuthPage: React.FC = (): JSX.Element => {
@@ -14,17 +15,7 @@ export const AuthPage: React.FC = (): JSX.Element => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [email, setEmail] = useState('')
 
-    //console.log(name, login, password, confirmPassword, email)
-
-    const dataBaseRequest = async (e: React.MouseEvent<HTMLButtonElement>) => {
-
-        let recivedData = null
-
-        await fetch('http://localhost:5173/src/plugs/users.json')
-            .then(res => res.json())
-            .then(data => recivedData = data)
-            console.log(recivedData, login, password)
-    }
+    
 
     return (
         <Box
@@ -41,7 +32,7 @@ export const AuthPage: React.FC = (): JSX.Element => {
                 
                 :
 
-                <SignUpForm setName={setName} setLogin={setLogin} setPassword={setPassword} setConfirmPassword={setConfirmPassword} setEmail={setEmail} setIsAuth={setIsAuth}/>
+                <SignUpForm setName={setName} setLogin={setLogin} setPassword={setPassword} setConfirmPassword={setConfirmPassword} setEmail={setEmail}/>
             }
         </Box>
     )

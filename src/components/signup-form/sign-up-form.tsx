@@ -4,7 +4,7 @@ import { ISignUpForm } from "../../common/types/ISignUpForm"
 
 export const SignUpForm: React.FC<ISignUpForm> = (props: ISignUpForm): JSX.Element => {
 
-    const {setName, setLogin, setPassword, setConfirmPassword, setEmail, setIsAuth} = props
+    const {setName, setLogin, setPassword, setConfirmPassword, setEmail} = props
 
     return (
         <Container
