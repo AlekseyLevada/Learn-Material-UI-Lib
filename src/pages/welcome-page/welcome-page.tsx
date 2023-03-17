@@ -3,7 +3,7 @@ import { Box, Typography, Button } from '@mui/material';
 
 
 
-export const WelcomePage = () => {
+export const WelcomePage: React.FC = (): JSX.Element => {
     return (
         <Box
         sx={{
@@ -31,7 +31,7 @@ export const WelcomePage = () => {
             >
                 Material UI World
             </Typography>
-            <Link to='/login'>
+            <Link to='/auth'>
                 <Button
                     variant='contained'
                     sx={{

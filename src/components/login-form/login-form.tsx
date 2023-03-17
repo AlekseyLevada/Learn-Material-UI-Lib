@@ -1,20 +1,12 @@
-import { useState } from 'react'
 import { Container, Typography, TextField, Button } from "@mui/material"
-import { Link } from 'react-router-dom'
+
+import { IAuthUserInfo } from "../../common/types/IAuthUserInfo"
 
 
-export const Authentication = () => {
+export const LoginForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.Element => {
 
-    const [login, setLogin] = useState('')
-    const [password, setPassword] = useState('')
+    const {setLogin, setPassword, setIsAuth} = props
 
-    const dataBaseRequest = async (e: any) => {
-        let recivedData = null
-
-        await fetch('http://localhost:5173/src/plugs/users.json')
-        .then(res => res.json())
-        .then(data => recivedData = data)
-    }
 
     return (
         <Container
@@ -68,7 +60,6 @@ export const Authentication = () => {
                     }}>
                 </TextField>
                 <Button
-                    onClick={(e) => dataBaseRequest(e)}
                     fullWidth={true}
                     variant="contained"
                 >
@@ -83,8 +74,7 @@ export const Authentication = () => {
                 }}
             >
                 Don't have an account?
-                <Link to='/register'>
-                    <Typography
+                    <Typography onClick={()=> setIsAuth(false)}
                     sx={{
                         display: 'inline',
                         color: '#1665C0',
@@ -95,7 +85,6 @@ export const Authentication = () => {
                     >
                         Register!
                     </Typography>
-                </Link>
             </Typography>
             </form>
         </Container>

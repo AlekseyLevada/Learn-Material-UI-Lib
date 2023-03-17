@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom'
 import { Box } from '@mui/material/'
 
 
-export const PrivatePage = () => {
+export const PrivatePage: React.FC = (): JSX.Element => {
 
     const [isAuth, setIsAuth] = useState(true)
 

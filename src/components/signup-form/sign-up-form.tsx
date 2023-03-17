@@ -1,6 +1,10 @@
 import { Container, Typography, TextField, Button } from "@mui/material"
 
-export const SignUp = () => {
+import { IAuthUserInfo } from "../../common/types/IAuthUserInfo"
+
+export const SignUpForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.Element => {
+
+
     return (
         <Container
             sx={{
