@@ -1,11 +1,18 @@
 import { Container, Typography, TextField, Button } from "@mui/material"
 
-import { IAuthUserInfo } from "../../common/types/IAuthUserInfo"
+import { ILoginForm } from "../../common/types/ILoginForm"
+
+import { useAppDispatch } from "../../store/hoocks"
 
 
-export const LoginForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.Element => {
+export const LoginForm: React.FC<ILoginForm> = (props: ILoginForm): JSX.Element => {
 
     const {setLogin, setPassword, setIsAuth} = props
+
+    const dispatch = useAppDispatch()
+
+    // const value = useAppSelector()
+    // console.log(value) 
 
 
     return (

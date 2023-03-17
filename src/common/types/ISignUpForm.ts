@@ -1,4 +1,4 @@
-export interface IAuthUserInfo {
+export interface ISignUpForm {
     setName: (value: string) => void
     setLogin: (value: string) => void
     setPassword: (value: string) => void

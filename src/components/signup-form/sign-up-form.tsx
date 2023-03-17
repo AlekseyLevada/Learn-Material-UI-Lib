@@ -1,9 +1,10 @@
 import { Container, Typography, TextField, Button } from "@mui/material"
 
-import { IAuthUserInfo } from "../../common/types/IAuthUserInfo"
+import { ISignUpForm } from "../../common/types/ISignUpForm"
 
-export const SignUpForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.Element => {
+export const SignUpForm: React.FC<ISignUpForm> = (props: ISignUpForm): JSX.Element => {
 
+    const {setName, setLogin, setPassword, setConfirmPassword, setEmail, setIsAuth} = props
 
     return (
         <Container
@@ -33,7 +34,7 @@ export const SignUpForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.E
             >
                 Enter your login and password for registration
             </Typography>
-            <TextField
+            <TextField onChange={(e) => setName(e.target.value)}
                 autoFocus
                 required
                 size="small"
@@ -43,7 +44,7 @@ export const SignUpForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.E
                     mb: '20px'
                 }}>
             </TextField>
-            <TextField
+            <TextField onChange={(e) => setLogin(e.target.value)}
                 required
                 size="small"
                 variant='outlined'
@@ -52,7 +53,7 @@ export const SignUpForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.E
                     mb: '20px'
                 }}>
             </TextField>
-            <TextField
+            <TextField onChange={(e) => setEmail(e.target.value)}
                 required
                 size="small"
                 variant='outlined'
@@ -61,7 +62,7 @@ export const SignUpForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.E
                     mb: '20px'
                 }}>
             </TextField>
-            <TextField
+            <TextField onChange={(e) => setPassword(e.target.value)}
                 required
                 size="small"
                 type='password'
@@ -71,7 +72,7 @@ export const SignUpForm: React.FC<IAuthUserInfo> = (props: IAuthUserInfo): JSX.E
                     mb: '20px'
                 }}>
             </TextField>
-            <TextField
+            <TextField onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 size="small"
                 type='password'

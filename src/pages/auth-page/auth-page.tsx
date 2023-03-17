@@ -14,15 +14,17 @@ export const AuthPage: React.FC = (): JSX.Element => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [email, setEmail] = useState('')
 
-    // const dataBaseRequest = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    //console.log(name, login, password, confirmPassword, email)
 
-    //     let recivedData = null
+    const dataBaseRequest = async (e: React.MouseEvent<HTMLButtonElement>) => {
 
-    //     await fetch('http://localhost:5173/src/plugs/users.json')
-    //         .then(res => res.json())
-    //         .then(data => recivedData = data)
-    //         console.log(recivedData, login, password)
-    // }
+        let recivedData = null
+
+        await fetch('http://localhost:5173/src/plugs/users.json')
+            .then(res => res.json())
+            .then(data => recivedData = data)
+            console.log(recivedData, login, password)
+    }
 
     return (
         <Box
@@ -35,7 +37,7 @@ export const AuthPage: React.FC = (): JSX.Element => {
             }}
         >
             {
-                isAuth? <LoginForm setName={setName} setLogin={setLogin} setPassword={setPassword} setConfirmPassword={setConfirmPassword} setEmail={setEmail} setIsAuth={setIsAuth}/>
+                isAuth? <LoginForm setLogin={setLogin} setPassword={setPassword} setIsAuth={setIsAuth}/>
                 
                 :
 
