@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { Box, Typography, Button } from '@mui/material';
 
@@ -35,7 +36,7 @@ export const WelcomePage: React.FC = (): JSX.Element => {
                 <Button
                     variant='contained'
                     sx={{
-                        bgcolor:'darkmagenta'
+                        backgroundColor:'darkmagenta',
                     }}
                     >
                     Войти в приложение

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Container, Typography, TextField, Button } from "@mui/material"
 
 import { ISignUpForm } from "../../common/types/ISignUpForm"

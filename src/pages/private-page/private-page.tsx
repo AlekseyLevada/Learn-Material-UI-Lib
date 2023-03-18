@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { Box } from '@mui/material/'
-
+import {useAppSelector} from "../../store/hoocks";
+import {RootState} from "../../store/store";
 
 export const PrivatePage: React.FC = (): JSX.Element => {
 
-    const [isAuth, setIsAuth] = useState(true)
+    const { isAuth } = useAppSelector((state: RootState) => state.auth)
 
     return(
         <Box>

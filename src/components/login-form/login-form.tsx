@@ -1,11 +1,16 @@
+import React from 'react'
 import { Container, Typography, TextField, Button } from "@mui/material"
 
 import { ILoginForm } from "../../common/types/ILoginForm"
+import { useAppDispatch } from "../../store/hoocks"
+import {login} from "../../store/slices/auth/auth";
 
 
 export const LoginForm: React.FC<ILoginForm> = (props: ILoginForm): JSX.Element => {
 
-    const { setLogin, setPassword, setIsAuth, submitFormData } = props
+    const { setLogin, setPassword, submitFormData } = props
+
+    const dispatch = useAppDispatch()
 
     return (
         <Container
@@ -74,7 +79,7 @@ export const LoginForm: React.FC<ILoginForm> = (props: ILoginForm): JSX.Element 
                     }}
                 >
                     Don't have an account?
-                    <Typography onClick={() => setIsAuth(false)}
+                    <Typography onClick={() => dispatch(login(false))}
                         sx={{
                             display: 'inline',
                             color: '#1665C0',

@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Box } from "@mui/material"
+
 import { LoginForm } from "../../components/login-form/login-form"
 import { SignUpForm } from '../../components/signup-form/sign-up-form'
-import axios from 'axios'
 import { IUser } from '../../common/types/IUser'
+import {RootState} from "../../store/store";
+
+import axios from 'axios'
+import { Box } from "@mui/material"
+import {useAppDispatch, useAppSelector} from "../../store/hoocks";
 
 
 export const AuthPage: React.FC = (): JSX.Element => {
-
-    const [isAuth, setIsAuth] = useState(true)
-    const navigate = useNavigate()
 
     const [name, setName] = useState('')
     const [login, setLogin] = useState('')
@@ -18,30 +19,36 @@ export const AuthPage: React.FC = (): JSX.Element => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [email, setEmail] = useState('')
 
+    const { isAuth } = useAppSelector((state:RootState) => state.auth)
+
+    const navigate = useNavigate()
+
+    console.log(isAuth)
+
     const submitFormData = async (e: { preventDefault: () => void }, formType: string) => {
         e.preventDefault()
         let dataFromServer: any = []
-
         await axios.get('http://localhost:5173/src/plugs/users.json')
-            .then(data => dataFromServer = data.data)
+            .then(res => dataFromServer = res.data)
 
         if (formType === 'loginForm') {
             const userData = { login, password }
-            dataFromServer.map((el: IUser) => {
-                if (el.login === userData.login && el.password === userData.password) {
-                    navigate("/main")
-                    return el
-                }
-            })
+            const user = dataFromServer.find((el: IUser) => el.login === userData.login && el.password === userData.password)
+            if (user) {
+                navigate('/main')
+            }
+            else alert('Нет такого пользователя!')
         }
-        else {
-            if (password !== confirmPassword) {
-                alert('Пароли не совпадают, проверте правильность ввода')
+
+        if (formType === 'signUpForm') {
+            const userData = {
+                name,
+                login,
+                password,
+                confirmPassword,
+                email
             }
-            else {
-                const userData = { name, login, password, confirmPassword, email }
-                console.log(userData)
-            }
+            console.log(userData)
         }
     }
 
@@ -57,10 +64,8 @@ export const AuthPage: React.FC = (): JSX.Element => {
             }}
         >
             {
-                isAuth ? <LoginForm setLogin={setLogin} setPassword={setPassword} setIsAuth={setIsAuth} submitFormData={submitFormData} />
-
+                isAuth ? <LoginForm setLogin={setLogin} setPassword={setPassword} submitFormData={submitFormData}/>
                     :
-
                     <SignUpForm setName={setName} setLogin={setLogin} setPassword={setPassword} setConfirmPassword={setConfirmPassword} setEmail={setEmail} submitFormData={submitFormData} />
             }
         </Box>
